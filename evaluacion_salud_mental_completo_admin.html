@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Administrador - Salud Mental</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <img src="logotipoescuelaunivdep.png" alt="Logo Escuela" />
+    <h1>Panel de Administrador</h1>
+    <img src="ubsunivdepbusinessschool.png" alt="Logo Business School" />
+  </header>
+
+  <main>
+    <div id="adminLogin" class="section">
+      <h2>Acceso Administrador</h2>
+      <input type="text" id="usuarioAdmin" placeholder="Usuario" />
+      <input type="password" id="claveAdmin" placeholder="Contraseña" />
+      <button onclick="accederAdmin()">Entrar</button>
+    </div>
+
+    <div id="adminPanel" class="section">
+      <h2>Resultados Registrados</h2>
+      <div id="buscadorAdminContainer">
+        <input type="search" id="buscadorAdmin" placeholder="Buscar por nombre completo..." oninput="filtrarResultados()" />
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre completo</th>
+            <th>Correo</th>
+            <th>Fecha y hora</th>
+            <th>BAI</th>
+            <th>BDI</th>
+            <th>Ver respuestas</th>
+            <th>Descargar PDF</th>
+          </tr>
+        </thead>
+        <tbody id="tablaAdmin"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
