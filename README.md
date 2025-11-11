@@ -1,1 +1,0 @@
-# psycologia-programa-de-beck
