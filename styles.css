@@ -1,0 +1,313 @@
+/* === BASE DEL DISEÑO === */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f9ff;
+  color: #102542;
+  margin: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: #102542;
+  color: white;
+  padding: 15px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0 15px;
+  font-size: 24px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+header img {
+  height: 50px;
+  object-fit: contain;
+}
+
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* === BOTONES === */
+button {
+  background: #f9b233;
+  color: #102542;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px 5px 0 0;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* === SECCIONES (ocultas por defecto) === */
+.section {
+  display: none;
+}
+
+/* === PREGUNTAS === */
+.question {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+.question p {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #102542;
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
+}
+
+label:hover {
+  color: #102542;
+}
+
+/* === CAMPOS DE ENTRADA === */
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #f9b233;
+  box-shadow: 0 0 5px rgba(249, 178, 51, 0.3);
+}
+
+/* === TABLAS (panel admin) === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #102542;
+  color: white;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fafafa;
+}
+
+/* Botón dentro de celda */
+td button {
+  padding: 6px 12px;
+  font-size: 12px;
+  background-color: #102542;
+  color: white;
+}
+
+td button:hover {
+  background-color: #0d1e36;
+}
+
+/* === BUSCADOR ADMIN === */
+#buscadorAdminContainer {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#buscadorAdmin {
+  width: 60%;
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#buscadorAdmin:focus {
+  outline: none;
+  border-color: #f9b233;
+}
+
+/* === RESULTADO FINAL (pre formateado) === */
+#textoResultado {
+  background-color: #f0f7ff;
+  padding: 20px;
+  border: 1px dashed #2a4d8f;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: #102542;
+  margin-bottom: 20px;
+}
+
+/* === RESPONSIVE PARA TODOS LOS DISPOSITIVOS === */
+
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  header img {
+    height: 40px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 12px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  #buscadorAdmin {
+    width: 70%;
+    font-size: 14px;
+  }
+
+  .question {
+    margin-bottom: 15px;
+    padding: 8px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  #textoResultado {
+    font-size: 14px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  header h1 {
+    font-size: 18px;
+  }
+
+  header img {
+    height: 30px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="search"],
+  input[type="email"] {
+    font-size: 14px;
+  }
+
+  #buscadorAdmin {
+    width: 80%;
+  }
+
+  .question {
+    margin-bottom: 15px;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
+  #textoResultado {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 16px;
+  }
+
+  header img {
+    height: 25px;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="search"],
+  input[type="email"] {
+    font-size: 12px;
+  }
+
+  #buscadorAdmin {
+    width: 90%;
+  }
+
+  table {
+    font-size: 9px;
+  }
+
+  #textoResultado {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
